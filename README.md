@@ -22,3 +22,10 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## userテーブル
+|Column|Type|Options|
+|name|string|null:false|
+|email|string|null:false|
+### Association
+- has_many :articles
