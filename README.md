@@ -31,3 +31,11 @@ Things you may want to cover:
 |pass|string|null:false|
 ### Association
 - has_many :articles
+
+## articleテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|string|null:false|
+|user_id|string|null:false|
+### Association
+- belongs_to :user
