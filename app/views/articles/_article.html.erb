@@ -6,8 +6,10 @@
           <p><%= article.text %></p>
         </div>
         <div class="card-action">
-          <%= link_to "EDIT", edit_article_path(article) %>
-          <%= link_to "DELETE", "/articles/#{article.id}", method: :DELETE %>
+          <% if user_signed_in? && current_user.id == article.user_id %>
+            <%= link_to "EDIT", edit_article_path(article) %>
+            <%= link_to "DELETE", "/articles/#{article.id}", method: :DELETE %>
+          <% end %>
         </div>
       </div>
     </div>
