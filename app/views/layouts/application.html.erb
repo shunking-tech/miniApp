@@ -26,8 +26,8 @@
         <a href="#" class="brand-logo">Mini App</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <% if user_signed_in? %>
-            <li><a href="#">new</a></li>
-            <li><a href="#">logout</a></li>
+            <li><%= link_to "new", new_article_path %></li>
+            <li><%= link_to "sign out", destroy_user_session_path, method: :delete %></li>
           <% else %>
             <li><a href="#">sign in</a></li>
             <li><a href="#">sign up</a></li>
