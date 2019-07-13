@@ -8,7 +8,7 @@
         </div>
         <div class="card-action">
           <a href="#">EDIT</a>
-          <a href="#">DELETE</a>
+          <%= link_to "DELETE", "/articles/#{article.id}", method: :DELETE %>
         </div>
       </div>
     </div>
