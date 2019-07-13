@@ -24,7 +24,12 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
+    article = Article.find(params[:id])
+    if article.user_id == current_user.id
+      @article = Article.find(params[:id])
+    else
+      redirect_to :root
+    end
   end
 
   def update
