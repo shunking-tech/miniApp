@@ -23,14 +23,14 @@
   <body>
     <nav>
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Mini App</a>
+        <%= link_to "Mini App", root_path, {class: "brand-logo"} %>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <% if user_signed_in? %>
             <li><%= link_to "new", new_article_path %></li>
             <li><%= link_to "sign out", destroy_user_session_path, method: :delete %></li>
           <% else %>
-            <li><a href="#">sign in</a></li>
-            <li><a href="#">sign up</a></li>
+            <li><%= link_to "sign in", new_user_session_path %></li>
+            <li><%= link_to "sign up", new_user_registration_path %></li>
           <% end %>
         </ul>
       </div>
