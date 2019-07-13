@@ -23,6 +23,16 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  def update
+    article = Article.find(params[:id])
+    article.update(text: params[:text])
+    redirect_to :root
+  end
+
   # private
   #   def article_params
   #     params.permit(:text)

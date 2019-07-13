@@ -7,7 +7,8 @@
           <p><%= article.text %></p>
         </div>
         <div class="card-action">
-          <a href="#">EDIT</a>
+          <%# <a href="#">EDIT</a> %>
+          <%= link_to "EDIT", edit_article_path(article) %>
           <%= link_to "DELETE", "/articles/#{article.id}", method: :DELETE %>
         </div>
       </div>
