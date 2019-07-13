@@ -25,10 +25,13 @@
       <div class="nav-wrapper">
         <a href="#" class="brand-logo">Mini App</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="#">sign in</a></li>
-          <li><a href="#">sign up</a></li>
-          <li><a href="#">new</a></li>
-          <li><a href="#">logout</a></li>
+          <% if user_signed_in? %>
+            <li><a href="#">new</a></li>
+            <li><a href="#">logout</a></li>
+          <% else %>
+            <li><a href="#">sign in</a></li>
+            <li><a href="#">sign up</a></li>
+          <% end %>
         </ul>
       </div>
     </nav>
