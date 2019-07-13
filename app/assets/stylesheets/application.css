@@ -14,6 +14,15 @@
  *= require_self
  */
 
- * {
-  font-family: 'Chalkboard',sans-serif;
+ body {
+   background-color: #EEFFFF;
  }
+
+ .nav-wrapper, .pagination {
+   font-family: 'Apple Chancery',sans-serif;
+   background-color: skyblue;
+ }
+ 
+ .pagination {
+  text-align: center;
+}
