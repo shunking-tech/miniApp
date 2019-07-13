@@ -11,7 +11,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    Article.create(text: params[:text], user_id: 1)
+    Article.create(text: params[:text], user_id: current_user.id)
     redirect_to :root
   end
 
