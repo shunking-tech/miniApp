@@ -3,11 +3,13 @@
     <div class="col s12 m6">
       <div class="card blue-grey lighten-5">
         <div class="card-content black-text">
+          <span class="card-title"><%= article.user.nickname %>さん</span>
           <p><%= article.text %></p>
         </div>
         <div class="card-action">
-          <a href="#">EDIT</a>
-          <a href="#">DELETE</a>
+          <%# <a href="#">EDIT</a> %>
+          <%= link_to "EDIT", edit_article_path(article) %>
+          <%= link_to "DELETE", "/articles/#{article.id}", method: :DELETE %>
         </div>
       </div>
     </div>
