@@ -1,3 +1,13 @@
-<%= form_for @articles do |a| %>
-  <%= a.text_area :text %>
-<% end %>
+<div class="row">
+  <form class="col s12">
+    <div class="row">
+      <div class="input-field col s12">
+        new article
+        <%= form_for @articles do |a| %>
+          <%= a.text_area :text %>
+          <%= a.submit "create article" %>
+        <% end %>
+      </div>
+    </div>
+  </form>
+</div>
