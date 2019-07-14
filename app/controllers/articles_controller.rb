@@ -11,7 +11,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    Article.create(text: params[:text], user_id: current_user.id)
+    Article.create(article_params)
     redirect_to :root
   end
 
@@ -34,14 +34,14 @@ class ArticlesController < ApplicationController
 
   def update
     article = Article.find(params[:id])
-    article.update(text: params[:text])
+    article.update(text: article_params[:text])
     redirect_to :root
   end
 
-  # private
-  #   def article_params
-  #     params.permit(:text)
-  #   end
+  private
+    def article_params
+      params.permit(:text).merge(user_id: current_user.id)
+    end
 
   private
     def move_to_index
