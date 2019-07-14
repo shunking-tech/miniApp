@@ -14,3 +14,10 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+  $("#hukidasi").tooltip({
+    show:false,
+    hide:false
+  });
+});
