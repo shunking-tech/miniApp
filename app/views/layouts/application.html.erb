@@ -28,9 +28,11 @@
         <%= link_to "Mini App", root_path, {class: "brand-logo"} %>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <% if user_signed_in? %>
+            <li>ようこそ<%= current_user.nickname %>さん</li>
             <li><%= link_to "new", new_article_path %></li>
             <li><%= link_to "sign out", destroy_user_session_path, method: :delete %></li>
           <% else %>
+            <li>ようこそゲストさん</li>
             <li><%= link_to "sign in", new_user_session_path %></li>
             <li><%= link_to "sign up", new_user_registration_path %></li>
           <% end %>
