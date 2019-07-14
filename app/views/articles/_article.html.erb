@@ -7,7 +7,7 @@
         </div>
         <div class="card-action">
           <% if user_signed_in? && current_user.id == article.user_id %>
-            <%= link_to edit_article_path(article), class: "btn-floating btn-small waves-effect waves-light green" do %>
+            <%= link_to edit_article_path(article), class: "btn tooltipped btn-floating btn-small waves-effect waves-light green", "data-position": "bottom", "data-tooltip": "I am a tooltip" do %>
               <i class="large material-icons">edit</i>
             <% end %>
             <%= link_to "/articles/#{article.id}", method: :DELETE, class: "btn-floating btn-small waves-effect waves-light red" do %>
