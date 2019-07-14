@@ -7,12 +7,18 @@
         </div>
         <div class="card-action">
           <% if user_signed_in? && current_user.id == article.user_id %>
-            <%= link_to edit_article_path(article), class: "btn-floating btn-small waves-effect waves-light green" do %>
-              <i class="large material-icons">edit</i>
-            <% end %>
-            <%= link_to "/articles/#{article.id}", method: :DELETE, class: "btn-floating btn-small waves-effect waves-light red" do %>
-              <i class="large material-icons">delete</i>
-            <% end %>
+            <div class="useicon">
+              <%= link_to edit_article_path(article), class: "btn-floating btn-small waves-effect waves-light green" do %>
+                <i class="large material-icons">edit</i>
+              <% end %>
+              <p class="arrow_box">EDIT</p>
+            </div>
+            <div class="useicon">
+              <%= link_to "/articles/#{article.id}", method: :DELETE, class: "btn-floating btn-small waves-effect waves-light red" do %>
+                <i class="large material-icons">delete</i>
+              <% end %>
+              <p class="arrow_box">DELETE</p>
+            </div>
           <% end %>
         </div>
       </div>
